@@ -2,7 +2,11 @@
 
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
+var View1Page = require('./pages/view1Page.js');
+
 describe('my app', function() {
+
+   var view1Page;
 
   browser.get('index.html');
 
@@ -14,7 +18,8 @@ describe('my app', function() {
   describe('view1', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view1');
+        view1Page = new View1Page();
+
     });
 
 
@@ -22,6 +27,11 @@ describe('my app', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 1/);
     });
+
+   it('should show list of employees', function() {
+       expect(view1Page.employeeList.count()).toEqual(4);
+       expect(view1Page.employeeList.get(2).getText()).toContain('Charlie');
+   });
 
   });
 

@@ -1,1 +1,17 @@
 <p>This is the partial for view 1.</p>
+
+<h1>Employee list</h1>
+<ul>
+    <li ng-repeat="employee in employees">
+        <dl>
+            <dt>Name:</dt>
+            <dd> {{ employee.name }}</dd>
+            <dt>Age:</dt>
+            <dd> {{ employee.age }}</dd>
+            <dt>Job:</dt>
+            <dd>{{ employee.job }}</dd>
+        </dl>
+        <dl>
+        </dl>
+    </li>
+</ul>
