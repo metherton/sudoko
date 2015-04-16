@@ -17,7 +17,7 @@ describe('my app', function() {
   });
 
 
-  describe('view1', function() {
+  xdescribe('view1', function() {
 
     beforeEach(function() {
         view1Page = new View1Page();
@@ -43,7 +43,6 @@ describe('my app', function() {
         view2Page = new View2Page();
     });
 
-
     it('should render view2 when user navigates to /view2', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 2/);
@@ -52,6 +51,7 @@ describe('my app', function() {
   it('should show list of managers', function() {
       expect(view2Page.managerList.count()).toEqual(4);
       expect(view2Page.managerList.get(2).getText()).toContain('Charlie');
+      expect(view2Page.managerWithName.getText()).toContain('Janitor');
   });
 
   });

@@ -13,12 +13,15 @@ describe('myApp.view2 module', function() {
   describe('view2 controller', function(){
 
     it('should ....', inject(function($controller) {
+
+
         var $scope = {};
 
         //spec body
       var view2Ctrl = $controller('View2Ctrl', {$scope : $scope});
-        $scope.employees = [];
-        expect(view2Ctrl).toBeDefined();
+            $scope.employees = [];
+            expect(view2Ctrl).toBeDefined();
+
 
     }));
 

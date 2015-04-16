@@ -5,7 +5,11 @@ var View1Page = function() {
 };
 
 View1Page.prototype = Object.create({}, {
-    employeeList: { get: function () { return element.all(by.repeater('employee in employees')); }}
+    employeeList: {
+        get: function () {
+            return element.all(by.repeater('employee in employees'));
+        }
+    }
 });
 
 module.exports = View1Page;
