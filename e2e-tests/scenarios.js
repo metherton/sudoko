@@ -51,7 +51,8 @@ describe('my app', function() {
   it('should show list of managers', function() {
       expect(view2Page.managerList.count()).toEqual(4);
       expect(view2Page.managerList.get(2).getText()).toContain('Charlie');
-      expect(view2Page.managerWithName.getText()).toContain('Janitor');
+      expect(view2Page.managerWithName('Charlie').getText()).toContain('Janitor');
+//      expect(view2Page.managerWithName.getText()).toContain('Janitor');
   });
 
   });

@@ -12,28 +12,43 @@ View2Page.prototype = Object.create({}, {
         }
     },
 
-    managerWithName: {
-        get: function() {
-            return this.managerList.filter(
-                function (manager) {
-                    return manager.getText().then(
-                        function (text) {
-                            return text.indexOf('Charlie') > -1;
-                        }
-                    );
-                }
-            ).first();
-        }
-    }
+//    managerWithName: {
+//        get: function() {
+//            return this.managerList.filter(
+//                function (manager) {
+//                    return manager.getText().then(
+//                        function (text) {
+//                            return text.indexOf('Charlie') > -1;
+//                        }
+//                    );
+//                }
+//            ).first();
+//        }
+//    }
 
-//    managerWithName: function(name) {
-//       return managerList.filter(function(manager) {
-//           return manager.getText().then(function(text) {
-//              return text.indexOf(name) > -1;
-//           });
-//       }).first();
+//    managerWithName: function() {
+//        return function(name) {
+//            return this.managerList.filter(function(manager) {
+//                return manager.getText().then(function(text) {
+//                    return text.indexOf(name) > -1;
+//                });
+//            }).first();
+//        }
 //    }
 
 });
+
+View2Page.prototype.managerWithName = function(name) {
+                                        return this.managerList.filter(
+                                            function(manager) {
+                                                return manager.getText().then(
+                                                    function(text) {
+                                                        return text.indexOf(name) > -1;
+                                                    }
+                                                );
+                                            }
+                                        ).first();
+                                        
+                                    }
 
 module.exports = View2Page;
