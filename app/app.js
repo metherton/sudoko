@@ -99,9 +99,35 @@ sudokoApp.factory('Game', function() {
         ['1','2','3','4','5','6','7','8','9'].forEach(function(col) {
             var key = row + col;
             if (angular.isDefined(model[key])) {
-                var index = candidates.rows[row].indexOf(model[key]);
-                if (index > -1) {
-                    candidates.rows[row].splice(index,1);
+                var rowIndex = candidates.rows[row].indexOf(model[key]);
+                if (rowIndex > -1) {
+                    candidates.rows[row].splice(rowIndex,1);
+                }
+                var columnIndex = candidates.columns[col].indexOf(model[key]);
+                if (columnIndex > -1) {
+                    candidates.columns[col].splice(columnIndex,1);
+                }
+                var convertRowColToKey = function convertRowColToKey() {
+                    var rowPart, colPart;
+                    if (['a','b','c'].indexOf(row) > -1) {
+                        rowPart = '1';
+                    } else if (['d','e','f'].indexOf(row) > -1) {
+                        rowPart = '2'
+                    } else {
+                        rowPart = '3';
+                    }
+                    if (['1','2','3'].indexOf(col) > -1) {
+                        colPart = '1';
+                    } else if (['4','5','6'].indexOf(col) > -1) {
+                        colPart = '2'
+                    } else {
+                        colPart = '3';
+                    }
+                    return rowPart + '_' + colPart;
+                };
+                var squareIndex = candidates.squares[convertRowColToKey()].indexOf(model[key]);
+                if (squareIndex > -1) {
+                    candidates.squares[convertRowColToKey()].splice(squareIndex,1);
                 }
             }
         })

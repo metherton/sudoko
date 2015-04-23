@@ -54,6 +54,33 @@ describe('game', function() {
         expect(Game.get()).toEqual(initialModel);
         var candidates = Game.getCandidates();
         expect(candidates.rows.a).toEqual(['1', '3', '5', '6', '7', '9']);
+        expect(candidates.rows.b).toEqual(['1', '3', '4', '5', '7']);
+        expect(candidates.rows.c).toEqual(['1', '2', '5', '6', '8', '9']);
+        expect(candidates.rows.d).toEqual(['1', '5', '6', '7', '8', '9']);
+        expect(candidates.rows.e).toEqual(['2', '3', '4', '6', '8', '9']);
+        expect(candidates.rows.f).toEqual(['1', '2', '4', '7', '8', '9']);
+        expect(candidates.rows.g).toEqual(['2', '3', '5', '6', '7']);
+        expect(candidates.rows.h).toEqual(['1', '2', '3', '4', '7', '8']);
+        expect(candidates.rows.i).toEqual(['2', '3', '6', '8', '9']);
+        expect(candidates.columns['1']).toEqual(['2', '3', '5', '6', '8']);
+        expect(candidates.columns['2']).toEqual(['1', '2', '5', '7', '8', '9']);
+        expect(candidates.columns['3']).toEqual(['1', '2', '3', '4', '5', '9']);
+        expect(candidates.columns['4']).toEqual(['1', '3', '4', '6', '7', '9']);
+        expect(candidates.columns['5']).toEqual(['2', '3', '4', '5', '9']);
+        expect(candidates.columns['6']).toEqual(['1', '3', '6', '7', '8', '9']);
+        expect(candidates.columns['7']).toEqual(['3', '4', '6', '7','8']);
+        expect(candidates.columns['8']).toEqual(['1', '2', '5', '6', '7', '8']);
+        expect(candidates.columns['9']).toEqual(['1', '2', '6', '7', '8', '9']);
+        expect(candidates.squares['1_1']).toEqual(['1', '2', '3', '5', '6', '9']);
+        expect(candidates.squares['1_2']).toEqual(['1', '3', '5', '7', '9']);
+        expect(candidates.squares['1_3']).toEqual(['1', '4', '5', '6', '7', '8']);
+        expect(candidates.squares['2_1']).toEqual(['2', '4', '5', '7', '8', '9']);
+        expect(candidates.squares['2_2']).toEqual(['1', '3', '4', '6', '8', '9']);
+        expect(candidates.squares['2_3']).toEqual(['1', '2', '6', '7', '8', '9']);
+        expect(candidates.squares['3_1']).toEqual(['1', '2', '3', '5', '8']);
+        expect(candidates.squares['3_2']).toEqual(['2', '3', '4', '6', '7', '9']);
+        expect(candidates.squares['3_3']).toEqual(['2', '3', '6', '7', '8']);
+
     })
 
 });
