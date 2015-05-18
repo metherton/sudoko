@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="sudokoApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="sudokoApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="sudokoApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="sudokoApp" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,10 +15,114 @@
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
-  <div sudoko></div>
+<body ng-controller="sudokoCtrl as sCtrl">
+  <sudoko>
+      <div ng-repeat="(cellid, cellvalue) in sCtrl.model">
+        <sudoko-cell cell-data="cellvalue"></sudoko-cell>
+      </div>
+     <!--<div class="row">-->
+        <!--<sudoko-cell cell="a1" cellvalue="{{'model.a1.value'}}">this is cell a1</sudoko-cell>-->
+        <!--<sudoko-cell cell="a2" cellvalue="{{'model.a2.value'}}">this is cell a2</sudoko-cell>-->
+        <!--<sudoko-cell cell="a3" cellvalue="{{'model.a3.value'}}">this is cell a3</sudoko-cell>-->
+        <!--<sudoko-cell cell="a4">this is cell a4</sudoko-cell>-->
+        <!--<sudoko-cell cell="a5">this is cell a5</sudoko-cell>-->
+        <!--<sudoko-cell cell="a6">this is cell a6</sudoko-cell>-->
+        <!--<sudoko-cell cell="a7">this is cell a7</sudoko-cell>-->
+        <!--<sudoko-cell cell="a8">this is cell a8</sudoko-cell>-->
+        <!--<sudoko-cell cell="a9">this is cell a9</sudoko-cell>-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+          <!--<sudoko-cell cell="b1">this is cell b1</sudoko-cell>-->
+          <!--<sudoko-cell cell="b2">this is cell b2</sudoko-cell>-->
+          <!--<sudoko-cell cell="b3">this is cell b3</sudoko-cell>-->
+          <!--<sudoko-cell cell="b4">this is cell b4</sudoko-cell>-->
+          <!--<sudoko-cell cell="b5">this is cell b5</sudoko-cell>-->
+          <!--<sudoko-cell cell="b6">this is cell b6</sudoko-cell>-->
+          <!--<sudoko-cell cell="b7">this is cell b7</sudoko-cell>-->
+          <!--<sudoko-cell cell="b8">this is cell b8</sudoko-cell>-->
+          <!--<sudoko-cell cell="b9">this is cell b9</sudoko-cell>-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+          <!--<sudoko-cell cell="c1">this is cell c1</sudoko-cell>-->
+          <!--<sudoko-cell cell="c2">this is cell c2</sudoko-cell>-->
+          <!--<sudoko-cell cell="c3">this is cell c3</sudoko-cell>-->
+          <!--<sudoko-cell cell="c4">this is cell c4</sudoko-cell>-->
+          <!--<sudoko-cell cell="c5">this is cell c5</sudoko-cell>-->
+          <!--<sudoko-cell cell="c6">this is cell c6</sudoko-cell>-->
+          <!--<sudoko-cell cell="c7">this is cell c7</sudoko-cell>-->
+          <!--<sudoko-cell cell="c8">this is cell c8</sudoko-cell>-->
+          <!--<sudoko-cell cell="c9">this is cell c9</sudoko-cell>-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+          <!--<sudoko-cell cell="d1">this is cell d1</sudoko-cell>-->
+          <!--<sudoko-cell cell="d2">this is cell d2</sudoko-cell>-->
+          <!--<sudoko-cell cell="d3">this is cell d3</sudoko-cell>-->
+          <!--<sudoko-cell cell="d4">this is cell d4</sudoko-cell>-->
+          <!--<sudoko-cell cell="d5">this is cell d5</sudoko-cell>-->
+          <!--<sudoko-cell cell="d6">this is cell d6</sudoko-cell>-->
+          <!--<sudoko-cell cell="d7">this is cell d7</sudoko-cell>-->
+          <!--<sudoko-cell cell="d8">this is cell d8</sudoko-cell>-->
+          <!--<sudoko-cell cell="d9">this is cell d9</sudoko-cell>-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+          <!--<sudoko-cell cell="e1">this is cell e1</sudoko-cell>-->
+          <!--<sudoko-cell cell="e2">this is cell e2</sudoko-cell>-->
+          <!--<sudoko-cell cell="e3">this is cell e3</sudoko-cell>-->
+          <!--<sudoko-cell cell="e4">this is cell e4</sudoko-cell>-->
+          <!--<sudoko-cell cell="e5">this is cell e5</sudoko-cell>-->
+          <!--<sudoko-cell cell="e6">this is cell e6</sudoko-cell>-->
+          <!--<sudoko-cell cell="e7">this is cell e7</sudoko-cell>-->
+          <!--<sudoko-cell cell="e8">this is cell e8</sudoko-cell>-->
+          <!--<sudoko-cell cell="e9">this is cell e9</sudoko-cell>-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+          <!--<sudoko-cell cell="f1">this is cell f1</sudoko-cell>-->
+          <!--<sudoko-cell cell="f2">this is cell f2</sudoko-cell>-->
+          <!--<sudoko-cell cell="f3">this is cell f3</sudoko-cell>-->
+          <!--<sudoko-cell cell="f4">this is cell f4</sudoko-cell>-->
+          <!--<sudoko-cell cell="f5">this is cell f5</sudoko-cell>-->
+          <!--<sudoko-cell cell="f6">this is cell f6</sudoko-cell>-->
+          <!--<sudoko-cell cell="f7">this is cell f7</sudoko-cell>-->
+          <!--<sudoko-cell cell="f8">this is cell f8</sudoko-cell>-->
+          <!--<sudoko-cell cell="f9">this is cell f9</sudoko-cell>-->
+      <!--</div>-->
+      <!--<div class="row">-->
+          <!--<sudoko-cell cell="g1">this is cell g1</sudoko-cell>-->
+          <!--<sudoko-cell cell="g2">this is cell g2</sudoko-cell>-->
+          <!--<sudoko-cell cell="g3">this is cell g3</sudoko-cell>-->
+          <!--<sudoko-cell cell="g4">this is cell g4</sudoko-cell>-->
+          <!--<sudoko-cell cell="g5">this is cell g5</sudoko-cell>-->
+          <!--<sudoko-cell cell="g6">this is cell g6</sudoko-cell>-->
+          <!--<sudoko-cell cell="g7">this is cell g7</sudoko-cell>-->
+          <!--<sudoko-cell cell="g8">this is cell g8</sudoko-cell>-->
+          <!--<sudoko-cell cell="g9">this is cell g9</sudoko-cell>-->
+      <!--</div>-->
+      <!--<div class="row">-->
+          <!--<sudoko-cell cell="h1">this is cell h1</sudoko-cell>-->
+          <!--<sudoko-cell cell="h2">this is cell h2</sudoko-cell>-->
+          <!--<sudoko-cell cell="h3">this is cell h3</sudoko-cell>-->
+          <!--<sudoko-cell cell="h4">this is cell h4</sudoko-cell>-->
+          <!--<sudoko-cell cell="h5">this is cell h5</sudoko-cell>-->
+          <!--<sudoko-cell cell="h6">this is cell h6</sudoko-cell>-->
+          <!--<sudoko-cell cell="h7">this is cell h7</sudoko-cell>-->
+          <!--<sudoko-cell cell="h8">this is cell h8</sudoko-cell>-->
+          <!--<sudoko-cell cell="h9">this is cell h9</sudoko-cell>-->
+      <!--</div>-->
+      <!--<div class="row">-->
+          <!--<sudoko-cell cell="i1">this is cell i1</sudoko-cell>-->
+          <!--<sudoko-cell cell="i2">this is cell i2</sudoko-cell>-->
+          <!--<sudoko-cell cell="i3">this is cell i3</sudoko-cell>-->
+          <!--<sudoko-cell cell="i4">this is cell i4</sudoko-cell>-->
+          <!--<sudoko-cell cell="i5">this is cell i5</sudoko-cell>-->
+          <!--<sudoko-cell cell="i6">this is cell i6</sudoko-cell>-->
+          <!--<sudoko-cell cell="i7">this is cell i7</sudoko-cell>-->
+          <!--<sudoko-cell cell="i8">this is cell i8</sudoko-cell>-->
+          <!--<sudoko-cell cell="i9">this is cell i9</sudoko-cell>-->
+      <!--</div>-->
+  </sudoko>
   <div ng-view></div>
 
+  <script src="bower_components/lodash/lodash.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>

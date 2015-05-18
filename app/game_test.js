@@ -1,8 +1,8 @@
 'use strict';
 
-describe('game', function() {
+xdescribe('game', function() {
 
-    var Game, initialModel;
+    var Game, initialModel, _, $rootScope;
 
     beforeEach(module('myApp'));
     beforeEach(inject(function(_Game_) {
@@ -56,12 +56,13 @@ describe('game', function() {
         });
 
         it ('should calculate best possible candidate to purge from all cells', function() {
-            expect(Game.singleCellCandidate()).toEqual([{cell: 'd5', numberOfCandidates: 1, value: '9'},{cell: 'i6', numberOfCandidates: 1, value: '9'}]);
+//            expect(Game.singleCellCandidate()).toEqual({cell: 'd5', numberOfCandidates: 1, value: '9'});
+            expect(Game.getNextCandidate()).toEqual({'d5': ['9']});
         });
 
     });
 
-    xdescribe('hard', function() {
+    describe('hard', function() {
         beforeEach(function(){
             initialModel =  {
                 a1: '7',
